@@ -1,8 +1,7 @@
-const getUser =  require("../repositories/userRepository");
-
+const getUser = require("../repositories/userRepository");
 const getUserService = async () => {
-  // aqui debemos conectarnos a la BD, para poner en marcha la logica de negocio
-  return await getUser();
+  const users = await getUser();
+  return users;
 };
 
 module.exports = getUserService;

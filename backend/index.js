@@ -1,23 +1,17 @@
 const express = require("express");
-// const socket = require('./socket');
 const routes = require("./src/routes/api");
 
+// Creando el servidor
 const app = express();
-// porci queremos usar WebSockets
-const server = require('http').Server(app);
-// socket.connect(server);
 
-const bodyParser = require('body-parser');
+// Leer contenido json dentro del body
+app.use(express.json());
 
-// permitir que la app reciba JSON's
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+//Creando la API
+app.use("/api", routes);
 
-// estableciendo la api
-app.use("/api",routes);
+const PORT = 3000; // TODO: crear enviroments
 
-const PORT = "3000"; // TODO crear enviorment
-
-server.listen(PORT, () => {
-  console.log(`[db] Servidor corriendo en el puerto: ${PORT}`);
+app.listen(PORT, () => {
+  console.log("El servidor se ha levantado correctamente en el puerto ", PORT);
 });
