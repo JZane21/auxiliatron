@@ -1,10 +1,19 @@
 const getUserService = require("../services/userService");
 
-const getUserController = (req,res) => {
+const getUserController = async (req,res) => {
   // call service
-  // const response = getUserServices;
-  // return response = getUserService;
-  return res.send("hola mundo");
+
+  const response = await getUserService();
+  try{
+
+  }catch(err){
+    return res.status(500).json({
+      success: false,
+      message: "error retrieving Users",
+      error: err.message
+    });
+  };
+  res.status(200).json(response);
 };
 
 module.exports = getUserController;
