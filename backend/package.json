@@ -4,7 +4,7 @@
   "description": "Proyecto de ingenieria de software",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha src/test/**/*.test.js --exit",
     "start": "node --watch index.js"
   },
   "author": "UPB",
@@ -14,5 +14,10 @@
     "knex": "^2.5.1",
     "socket.io": "^4.7.2",
     "websocket": "^1.0.34"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "sinon": "^15.2.0"
   }
 }

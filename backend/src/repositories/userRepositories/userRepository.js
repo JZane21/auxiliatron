@@ -1,5 +1,5 @@
 const knex = require("knex");
-const mysqlConnection = require("../config/knex-mysql");
+const mysqlConnection = require("../../config/knex-mysql");
 const db = knex(mysqlConnection.development);
 
 const getUser = async () => {
