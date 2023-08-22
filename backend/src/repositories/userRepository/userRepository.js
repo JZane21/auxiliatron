@@ -1,5 +1,5 @@
 const knex = require("knex");
-const pgConnection = require("../config/knex-pg");
+const pgConnection = require("../../config/knex-pg");
 console.log(pgConnection);
 const db = knex(pgConnection.development);
 

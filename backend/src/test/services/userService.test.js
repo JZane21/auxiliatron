@@ -3,7 +3,7 @@ const chai = require("chai");
 const expect = chai.expect;
 
 const getUserService = require("../../services/userService");
-const userRepository = require("../../repositories/userRepository");
+const userRepository = require("../../repositories/userRepository/userRepository");
 
 describe("getUserService", () => {
   it("should call getUser from userRepository and return the result", async () => {

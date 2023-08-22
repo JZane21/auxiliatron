@@ -1,4 +1,4 @@
-const userRepository = require("../repositories/userRepository");
+const userRepository = require("../repositories/userRepository/userRepository");
 const logger = require('../utils/logger');
 
 const getUserService = async () => {
