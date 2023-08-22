@@ -1,5 +1,6 @@
 const express = require("express");
 const routes = require("./src/routes/api");
+require("dotenv").config();
 
 // Creando el servidor
 const app = express();

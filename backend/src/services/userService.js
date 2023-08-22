@@ -18,4 +18,27 @@ const getUserService = async () => {
 
 // el dev debe hacer los test cases
 
+// tenemos que hacer un MonkData, es decir, falsificar datos para realizar
+// pruebas
+
+// debemos devolver los datos que nos da la funcion Monkeada, es decir, llena
+// de datos con la siguiente forma:
+// const mockNameData = {
+//   faker dates
+// }
+
+// todos los lenguajes deben usar .env, con el fin de que puedan ser
+// usadas desde cualquier parte del backend (en este caso), ya sea
+// para referenciar a la base de datos, establecer el puerto de
+// conexion, etc
+
+// npm install dotenv
+
+// Para JavaScript se tiene ESLint, una herramienta que ayuda a que todo
+// se unifique en un solo formato de codigo
+// npm install eslint --save-dev
+// crear el archivo .eslintrc.js
+
+// utilizando Knex, podremos establecer el codigo de JavaScript
+
 module.exports = getUserService;
