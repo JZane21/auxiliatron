@@ -1,6 +1,7 @@
 const knex = require("knex");
-const mysqlConnection = require("../../config/knex-mysql");
-const db = knex(mysqlConnection.development);
+const pgConnection = require("../../config/knex-pg");
+console.log(pgConnection);
+const db = knex(pgConnection.development);
 
 const getUser = async () => {
   try {
@@ -15,7 +16,8 @@ const getUser = async () => {
     return usersJson;
   } catch (e) {
     console.error(e);
+    return e;
   }
 };
 
-module.exports = getUser;
+module.exports.getUser = getUser ;

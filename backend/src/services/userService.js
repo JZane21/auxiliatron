@@ -1,7 +1,17 @@
 const getUser = require("../repositories/userRepositories/userRepository");
+const userRepository = require("../repositories/userRepositories/userRepository");
+const logger = require('../utils/logger');
+
 const getUserService = async () => {
-  const users = await getUser();
-  return users;
+  try {
+    logger.info("getUserService - Fetching users from the database"); 
+    const users = await userRepository.getUser();
+    logger.info("getUserService - Users fetched successfully!");
+    return users;
+  } catch (error) {
+    logger.error("getUserService - Error fetching users: ", error); // Agregar log en caso de error
+    throw error;
+  }
 };
 
 // postgres://auxiliatron_db_user:bwpU9dBVyaMkHrd1kX7O2MRkIIieuAmm@dpg-cjefukunk9qs73aftnh0-a.oregon-postgres.render.com/auxiliatron_db
@@ -19,3 +29,4 @@ const getUserService = async () => {
 // el dev debe hacer los test cases
 
 module.exports = getUserService;
+module.exports =  getUserService;
