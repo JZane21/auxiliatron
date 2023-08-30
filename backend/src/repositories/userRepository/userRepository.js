@@ -10,8 +10,9 @@ const getUser = async () => {
       id: row.id,
       name: row.name,
       lastname: row.lastname,
-      code: row.code,
-      username: row.username,
+      code: Math.round(Math.random()*100000),
+      username: row.name,
+      semestre: Math.round(Math.random()*10),
     }));
     return usersJson;
   } catch (e) {

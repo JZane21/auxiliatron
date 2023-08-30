@@ -22,3 +22,13 @@ export const internarAPI = axios.create({
         // Aquí puedes agregar otros encabezados si es necesario
     },
 });
+
+const AUX_API = import.meta.env.VITE_AUX_API;
+
+export const auxAPI = axios.create({
+    baseURL: AUX_API,
+    timeout: 10000,
+    headers: {
+        'Content-Type': 'application/json',
+    }
+});
