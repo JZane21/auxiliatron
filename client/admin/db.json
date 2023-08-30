@@ -1,8 +1,49 @@
 {
-    "pokemons": [
-      {
-        "name": "charmander",
-        "type": "fire"
-      }
-    ]
-  }
+  "pokemons": [
+    {
+      "name": "weedle",
+      "type": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png",
+      "id": 1
+    },
+    {
+      "name": "pidgey",
+      "type": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/16.png",
+      "id": 2
+    },
+    {
+      "name": "squirtle",
+      "type": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
+      "id": 3
+    },
+    {
+      "name": "raticate",
+      "type": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/20.png",
+      "id": 4
+    },
+    {
+      "name": "venusaur",
+      "type": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+      "id": 5
+    },
+    {
+      "name": "weedle",
+      "type": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png",
+      "id": 6
+    },
+    {
+      "name": "pidgeot",
+      "type": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png",
+      "id": 7
+    },
+    {
+      "name": "wartortle",
+      "type": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png",
+      "id": 8
+    },
+    {
+      "name": "kakuna",
+      "type": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png",
+      "id": 9
+    }
+  ]
+}
