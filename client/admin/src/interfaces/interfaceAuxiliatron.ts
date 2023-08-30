@@ -1,5 +1,5 @@
 interface studentFrontend{
-  id:string;
+  id:number;
   name:string;
   lastName:string;
   code:number;
