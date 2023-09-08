@@ -1,12 +1,9 @@
-import { FlowBiteLogin } from "./components/FlowBiteLogin";
-import { LayoutCenter } from "./components/LayoutCenter";
-
+import "./App.css";
+import Component from "./components/TitleCard";
 function App() {
   return (
     <>
-      <LayoutCenter>
-        <FlowBiteLogin />
-      </LayoutCenter>
+      <Component name="Paul Landaeta" />
     </>
   );
 }

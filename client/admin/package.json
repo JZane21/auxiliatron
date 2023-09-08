@@ -4,13 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --open",
+    "dev": "vite",
+    "test": "jest",
     "start": "concurrently \"npm run dev\" \"npm run json-server\"",
     "build": "tsc && vite build",
     "json-server": "json-server --watch db.json --port 5000",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "test": "jest",
     "e2e": "cypress open"
   },
   "dependencies": {
@@ -19,14 +19,17 @@
     "@mui/icons-material": "^5.14.6",
     "@mui/material": "^5.14.5",
     "axios": "^1.5.0",
+    "jest-environment-jsdom": "^29.6.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.22.15",
+    "@babel/preset-typescript": "^7.22.15",
+    "@jest/globals": "^29.6.4",
     "@testing-library/jest-dom": "^6.1.2",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.4",
-    "@types/mocha": "^10.0.1",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
