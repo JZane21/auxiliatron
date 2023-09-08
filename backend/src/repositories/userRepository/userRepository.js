@@ -12,7 +12,7 @@ const getUser = async () => {
       lastname: row.lastname,
       code: Math.round(Math.random()*100000),
       username: row.name,
-      semestre: Math.round(Math.random()*10),
+      semestre: Math.round(Math.random()*9 + 1),
     }));
     return usersJson;
   } catch (e) {

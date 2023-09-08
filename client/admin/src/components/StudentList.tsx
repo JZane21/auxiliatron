@@ -1,25 +1,32 @@
-import React, { useState, useEffect } from 'react';
-import { List, ListItem, ListItemAvatar, Avatar, ListItemText } from '@mui/material';
-import { makeStyles } from '@mui/material/styles';
-
-
+import React, { useState, useEffect } from "react";
+import {
+  List,
+  ListItem,
+  ListItemAvatar,
+  Avatar,
+  ListItemText,
+} from "@mui/material";
+import { makeStyles } from "@mui/material/styles";
+import { getStudentsList } from "../services/auxiliatronService";
 
 interface Student {
   id: number;
   name: string;
-  semester: number;
+  semestre: number;
 }
 
 function StudentList() {
-
   const [students, setStudents] = useState<Student[]>([]);
 
+  const getStudents = async () => {
+    const datos = await getStudentsList();
+    if (datos !== null) {
+      setStudents(datos);
+    }
+  };
+
   useEffect(() => {
-    // Fetch data
-    fetch('YOUR_API_ENDPOINT')
-      .then(response => response.json())
-      .then(data => setStudents(data))
-      .catch(error => console.error('Error fetching data:', error));
+    getStudents();
   }, []);
 
   return (
@@ -27,15 +34,19 @@ function StudentList() {
       {students.map((student) => (
         <ListItem key={student.id}>
           <ListItemAvatar>
-            <Avatar className={classes.avatar}>
-              {student.name.charAt(0)}{student.semester}
+            <Avatar>
+              {student.name.charAt(0)}
+              {student.semestre}
             </Avatar>
           </ListItemAvatar>
-          <ListItemText primary={student.name} secondary={`Semester ${student.semester}`} />
+          <ListItemText
+            primary={student.name}
+            secondary={`Semester ${student.semestre}`}
+          />
         </ListItem>
       ))}
     </List>
   );
 }
 
-export default StudentList;
+export default StudentList;

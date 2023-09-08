@@ -1,9 +1,12 @@
-import "./App.css";
-import Pokedeck from "./components/Pokedeck";
+import { FlowBiteLogin } from "./components/FlowBiteLogin";
+import { LayoutCenter } from "./components/LayoutCenter";
+
 function App() {
   return (
     <>
-      <Pokedeck />
+      <LayoutCenter>
+        <FlowBiteLogin />
+      </LayoutCenter>
     </>
   );
 }
