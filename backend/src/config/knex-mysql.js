@@ -4,9 +4,9 @@ const mysqlConfig = {
         connection: {
             //TODO: jalar desde local ENV
             host: 'localhost',
-            user: 'root',
-            password: 'root',
-            database: 'auxiliatron'
+            user: 'auxiliatron_db_user',
+            password: 'bwpU9dBVyaMkHrd1kX7O2MRkIIieuAmm',
+            database: 'auxiliatron_db'
         }
     }
 }

@@ -3,11 +3,11 @@ const pgConfig = {
   development: {
     client: "pg",
     connection: {
-      //TODO: jalar desde local ENV
-      host: "dpg-cjefsv6e546c739qq6ng-a.oregon-postgres.render.com",
-      user: "paul",
-      password: "5JbepXDGfTd4vQQrToACmmzYIoIA5Fh3",
-      database: "auxiliatron_csle",
+      host: "dpg-cjefukunk9qs73aftnh0-a.oregon-postgres.render.com",
+      user: "auxiliatron_db_user",
+      name: 'auxiliatron-db',
+      password: "bwpU9dBVyaMkHrd1kX7O2MRkIIieuAmm",
+      database: "auxiliatron_db",
       ssl: { rejectUnauthorized: true },
     },
     migrations: {

@@ -3,13 +3,14 @@
  * @returns { Promise<void> }
  */
 exports.up = function(knex) {
-    return knex.schema.createTable('subjects', function (table) {
-        table.increments('id').primary();
+    return knex.schema.createTable('subject', function (table) {
+        table.integer('id').primary();
         table.string('name').notNullable();
-        table.text('description').notNullable();
-        table.integer('semester').notNullable();
+        table.string('description').notNullable();
+        table.integer('credits').notNullable();
+        table.string('proffesor').notNullable();
         table.timestamps(true, true);
-      });
+    });
 };
 
 /**
@@ -17,5 +18,5 @@ exports.up = function(knex) {
  * @returns { Promise<void> }
  */
 exports.down = function(knex) {
-    return knex.schema.dropTable('subjects');
+    return knex.schema.dropTable('subject');
 };
