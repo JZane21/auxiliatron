@@ -5,7 +5,7 @@ const db = knex(pgConnection.development);
 
 const getSubjects = async () => {
   try {
-    const subject = await db("subject").select("*");
+    const subject = await db("public").table("subject").select("*");
     const subjectJson = subject.map((row) => ({
       id: row.id,
       name: row.name,
@@ -20,4 +20,4 @@ const getSubjects = async () => {
   }
 };
 
-module.exports.getSubjects = getSubjects ;
+module.exports.getSubjects = getSubjects;

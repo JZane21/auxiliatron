@@ -5,14 +5,14 @@ const db = knex(pgConnection.development);
 
 const getUser = async () => {
   try {
-    const users = await db("users").select("*");
+    const users = await db("public").table("users").select("*");
     const usersJson = users.map((row) => ({
       id: row.id,
       name: row.name,
       lastname: row.lastname,
-      code: Math.round(Math.random()*100000),
+      code: Math.round(Math.random() * 100000),
       username: row.name,
-      semestre: Math.round(Math.random()*9 + 1),
+      semestre: Math.round(Math.random() * 9 + 1),
     }));
     return usersJson;
   } catch (e) {
@@ -21,4 +21,4 @@ const getUser = async () => {
   }
 };
 
-module.exports.getUser = getUser ;
+module.exports.getUser = getUser;

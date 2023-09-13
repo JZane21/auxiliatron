@@ -5,7 +5,7 @@ const db = knex(pgConnection.development);
 
 const postSubject = async (data) => {
   try {
-    const {id, name, description, credits, proffesor} = data;
+    const { id, name, description, credits, proffesor } = data;
     const newSubject = {
       id: id,
       name: name,
@@ -13,7 +13,7 @@ const postSubject = async (data) => {
       credits: credits,
       proffesor: proffesor,
     };
-    await db("subject").insert(newSubject);
+    await db("public").table("subject").insert(newSubject);
     return newSubject;
   } catch (e) {
     console.error(e);

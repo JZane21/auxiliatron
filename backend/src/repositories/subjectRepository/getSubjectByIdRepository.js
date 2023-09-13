@@ -5,19 +5,12 @@ const db = knex(pgConnection.development);
 
 const getSubjectById = async (id) => {
   try {
-    const subject = await db("subject").select("*").where("id",id);
-    const subjectJson = {
-      id: subject.id,
-      name: subject.name,
-      description: subject.description,
-      credits: subject.credits,
-      proffesor: subject.proffesor,
-    };
-    return subjectJson;
+    const subject = await db("public").table("subject").where("id", id);
+    return subject;
   } catch (e) {
     console.error(e);
     return e;
   }
 };
 
-module.exports.getSubjectById = getSubjectById ;
+module.exports.getSubjectById = getSubjectById;

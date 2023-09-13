@@ -5,7 +5,7 @@ const deleteSubjectController = async (req, res) => {
     logger.info('deleteSubjectController - Req', req);
     try {
         logger.info("deleteSubjectController - Deleting subject");
-        await deleteSubjectService(req.body.id);
+        await deleteSubjectService(req.query.id);
         logger.info("deleteSubjectController - Subject deleted");
         return res.status(200).json({
             success: true,
@@ -19,7 +19,7 @@ const deleteSubjectController = async (req, res) => {
             error: error.message
         })
     }
-    
+
 };
 
 module.exports = deleteSubjectController;

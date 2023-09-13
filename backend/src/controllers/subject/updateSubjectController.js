@@ -2,10 +2,10 @@ const updateSubjectService = require('../../services/subject/updateSubjectServic
 const logger = require('../../utils/logger');
 
 const updateSubjectController = async (req, res) => {
-    logger.info('updateSubjectController - Req', req);
+    logger.info('updateSubjectController - Req');
     try {
         logger.info("updateSubjectController - Updating subject");
-        const subjects = await updateSubjectService();
+        const subjects = await updateSubjectService(req.query.id, req.body);
         logger.info("updateSubjectController - Subject updated");
         return res.status(200).json({
             success: true,
@@ -20,7 +20,7 @@ const updateSubjectController = async (req, res) => {
             error: error.message
         })
     }
-    
+
 };
 
 module.exports = updateSubjectController;
