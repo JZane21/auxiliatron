@@ -1,21 +1,41 @@
 import { render, screen } from "@testing-library/react";
 import { CalculatorInput } from "../../components/CalculatorInput";
-import { useState } from "react";
 
-test("Renderiza TitleCard correctamente", () => {
-  const [value, setValue] = useState<string>("573");
-  const [findedError, setFindedError] = useState<boolean>(false);
+describe("CalculatorInput",() => {
+  test("Renderizar numero entero +", () => {
+    const value:string = "753343";
+    render(
+      <CalculatorInput value={value}/>
+    );
+    const elemento = screen.getByText(/753343/i);
+    expect(elemento).true;
+  });
+  
+  test("Renderizar numero entero -",() => {
+    const value:string = "-3583083";
+    render(
+      <CalculatorInput value={value}/>
+    );
+    const elemento = screen.getByText("-3583083");
+    expect(elemento).true;
+  });
 
-  render(
-    <CalculatorInput
-      value={value}
-      placeHolder={""}
-      setValue={setValue}
-      setFindedError={setFindedError}
-    />
-  );
-  const elemento = screen.getByText(
-    /Debe agregar un número entero o decimal (3.42, -1.3, 4, -5)/i
-  );
-  expect(elemento).toBeFalse();
+  test("Renderizar numero flotante +",() => {
+    const value:string = "98859.0000000000034";
+    render(
+      <CalculatorInput value={value}/>
+    );
+    const elemento = screen.getByText(`${value}`);
+    expect(elemento).true;
+  });
+
+  test("Renderizar numero flotante -", () => {
+    const value:string = "-49320.0000000000034";
+    render(
+      <CalculatorInput value={value}/>
+    );
+    const elemento = screen.getByText(`${value}`);
+    expect(elemento).true;
+  });
+  
 });

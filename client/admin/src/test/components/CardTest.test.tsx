@@ -5,5 +5,5 @@ import { CardHola } from "../../components/CardHola";
 test("Verificar el renderizado del componente CardTest", () => {
   render(<CardHola text="hola mundo" />);
   const text = screen.getByText(/hola mundo/i);
-  expect(text).toBeTruthy();
+  expect(text).true;
 });

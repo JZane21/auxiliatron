@@ -11,7 +11,11 @@ const subject = require('./subjectRoute');
  *     summary: Obtener una lista de subjects
  *     responses:
  *       200:
- *         description: lista de subjects obtenida exitosamente
+ *         responseData: [{ id: 1, name: "Name", description: "Description", credits:1, proffesor: "Proffesor" }]
+ *         message: One/All Subjects retrieved successfully
+ *       500:
+ *         responseData: []
+ *         message: Error retrieving one/all subjects
  */
 
 /**
@@ -19,19 +23,53 @@ const subject = require('./subjectRoute');
  * /subjects/{id}:
  *   get:
  *     summary: Obtener un subject
+ *     requestParams:
+ *       required: true
+ *       id:
+ *         type: int
+ *         description: text
  *     responses:
  *       200:
- *         description: Subject obtenida exitosamente
- */
+ *         responseData: [{ id: 1, name: "Name", description: "Description", credits:1, proffesor: "Proffesor" }]
+ *         message: One/All Subjects retrieved successfully
+ *       500:
+ *         responseData: []
+ *         message: Error retrieving one/all subjects
+*/
 
 /**
  * @swagger
  * /subjects:
  *   post:
  *     summary: Agregar Subject
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               id:
+ *                 type: int
+ *                 description: number
+ *               name:
+ *                 type: string
+ *                 description: text
+ *               description:
+ *                 type: string
+ *                 description: text
+ *               credits:
+ *                 type: int
+ *                 description: number
+ *               proffesor:
+ *                 type: string
+ *                 description: text
+ *             required:
+ *               - property1
+ *               - property2
  *     responses:
  *       200:
- *         description: Subject posteado exitosamente
+ *         description: Agregar Subject
  */
 
 /**
@@ -39,9 +77,13 @@ const subject = require('./subjectRoute');
  * /subjects/{id}:
  *   put:
  *     summary: Actualizar un subject
+ *       requestBody:
+ *         required: true
  *     responses:
  *       200:
- *         description: Subject actualizado exitosamente
+ *         description: Subject updated
+ *       500:
+ *         description: Error updating subject
  */
 
 /**
@@ -51,7 +93,9 @@ const subject = require('./subjectRoute');
  *     summary: Eliminar subject
  *     responses:
  *       200:
- *         description: Subject eliminado exitosamente
+ *         message: Subject deleted
+ *       500:
+ *         message: Error deleting subject
  */
 
 const routes = (server) => {

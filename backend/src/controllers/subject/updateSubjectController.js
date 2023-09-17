@@ -5,7 +5,7 @@ const updateSubjectController = async (req, res) => {
     logger.info('updateSubjectController - Req');
     try {
         logger.info("updateSubjectController - Updating subject");
-        const subjects = await updateSubjectService(req.query.id, req.body);
+        const subjects = await updateSubjectService(req.params.id, req.body);
         logger.info("updateSubjectController - Subject updated");
         return res.status(200).json({
             success: true,

@@ -1,5 +1,5 @@
 import "./App.css";
-import { SumCalculator } from "./components/SumCalculator";
+import { Calculator } from "./components/Calculator";
 import { ModalPage } from "./modals/ModalPage";
 /*
 
@@ -35,7 +35,7 @@ function App() {
   return (
     <>
       <ModalPage>
-        <SumCalculator />
+        <Calculator />
       </ModalPage>
     </>
   );

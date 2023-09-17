@@ -5,7 +5,7 @@ const deleteSubjectController = async (req, res) => {
     logger.info('deleteSubjectController - Req', req);
     try {
         logger.info("deleteSubjectController - Deleting subject");
-        await deleteSubjectService(req.query.id);
+        await deleteSubjectService(req.params.id);
         logger.info("deleteSubjectController - Subject deleted");
         return res.status(200).json({
             success: true,

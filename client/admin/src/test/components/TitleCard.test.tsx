@@ -4,10 +4,6 @@ import TitleCard from "../../components/TitleCard";
 test("Renderiza TitleCard correctamente", () => {
   // Cambia "MiComponente" a "TitleCard"
   render(<TitleCard title="Titulo de prueba" />);
-  const elemento = screen.getByText(/Título/i);
-  expect(elemento).toBeTruthy();
-});
-
-test("Realiza alguna otra prueba", () => {
-  // Agrega tus pruebas personalizadas aquí
+  const elemento = screen.getByText(/Titulo de prueba/i);
+  expect(elemento).true;
 });

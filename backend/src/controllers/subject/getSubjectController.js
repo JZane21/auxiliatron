@@ -7,10 +7,10 @@ const getSubjectController = async (req, res) => {
     try {
         logger.info("Subject Controller - Getting one/all subjects");
         let subjects;
-        if (req.query.id === null || req.query.id === undefined) {
+        if (req.params.id === null || req.params.id === undefined) {
             subjects = await getSubjectService();
         } else {
-            subjects = await getSubjectByIdService(req.query.id);
+            subjects = await getSubjectByIdService(req.params.id);
         }
         logger.info("Subject Controller - One/All Subjects gotten");
         return res.status(200).json({
@@ -22,7 +22,7 @@ const getSubjectController = async (req, res) => {
         logger.info("Subject Controller - Error while getting one/all subjects");
         return res.status(500).json({
             success: false,
-            message: 'Error retrieving subjects',
+            message: 'Error retrieving one/all subjects',
             error: error.message
         })
     }
