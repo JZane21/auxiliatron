@@ -13,3 +13,14 @@ Para prueba de ello, se tienen las siguientes imagenes:
 
 ![calculator](https://github.com/JZane21/auxiliatron/assets/82000556/ebaf6ece-65ce-4bfc-86c7-a4b1daa20cae)
 ![jenkins](https://github.com/JZane21/auxiliatron/assets/82000556/a9e13026-d993-4fae-8afc-532f8765933f)
+
+En caso de que deseen probar la calculadora, deben ingresar los siguientes comando una vez clonado el repositorio:
+
+* cd client
+* cd admin
+* npm install
+* npm run dev
+
+Cuando quieran "apagar" la calculadora, deben ejecutar:
+
+* CTRL + c
