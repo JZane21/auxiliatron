@@ -193,8 +193,8 @@ export const Calculator = () => {
       >
         <h1 className="text-xl font-bold font-mono text-white">CALCULATOR</h1>
 
-        <CalculatorInput id={"result"} value={result} />
-        <CalculatorInput id={"resultToShow"} value={resultToShow} />
+        <CalculatorInput idInput={"result"} value={result} />
+        <CalculatorInput idInput={"resultToShow"} value={resultToShow} />
 
         <ButtonsCalculator>
         <>
